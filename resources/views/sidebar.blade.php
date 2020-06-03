@@ -2,38 +2,38 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ url('/') }}">
+                <a class="nav-link @yield('dashboard')" href="{{ url('/dashboard') }}">
                 <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
+                Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/clientes') }}">
+                <a class="nav-link @yield('clientes')" href="{{ url('/clientes') }}">
                 <span data-feather="users"></span>
                 Clientes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/productos') }}">
-                <span data-feather="shopping-cart"></span>
+                <a class="nav-link {{ Request::is('/productos') ? 'active' : '' }}" href="{{ url('/productos') }}">
+                <span data-feather="products"></span>
                 Productos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/pedidos') }}">
-                <span data-feather="bar-chart-2"></span>
+                <a class="nav-link {{ Request::is('/pedidos') ? 'active' : '' }}" href="{{ url('/pedidos') }}">
+                <span data-feather="orders"></span>
                 Pedidos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/reportes') }}">
-                <span data-feather="bar-chart-2"></span>
+                <a class="nav-link {{ Request::is('/reportes') ? 'active' : '' }}" href="{{ url('/reportes') }}">
+                <span data-feather="report"></span>
                 Reportes
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
+                <span data-feather="employed"></span>
                 Empleados
                 </a>
             </li>
