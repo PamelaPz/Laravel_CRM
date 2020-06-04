@@ -6,8 +6,6 @@
 
     <div class="pt-4 pb-4">
         <h4>Rerportes por semana, mes, año.</h4>
-    </div>
-    
-    
+    </div>  
 
 @include('footer')

@@ -2,37 +2,37 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link @yield('dashboard')" href="{{ url('/dashboard') }}">
+                <a class="nav-link {{ active('home') }}" href="{{ route('home') }}">
                 <span data-feather="home"></span>
                 Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @yield('clientes')" href="{{ url('/clientes') }}">
+                <a class="nav-link {{ active('customers') }}" href="{{ route('customers') }}">
                 <span data-feather="users"></span>
                 Clientes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('/productos') ? 'active' : '' }}" href="{{ url('/productos') }}">
+                <a class="nav-link {{ active('products') }}" href="{{ route('products') }}">
                 <span data-feather="products"></span>
                 Productos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('/pedidos') ? 'active' : '' }}" href="{{ url('/pedidos') }}">
+                <a class="nav-link {{ active('orders') }}" href="{{ route('orders') }}">
                 <span data-feather="orders"></span>
                 Pedidos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('/reportes') ? 'active' : '' }}" href="{{ url('/reportes') }}">
+                <a class="nav-link {{ active('reports') }}" href="{{ route('reports') }}">
                 <span data-feather="report"></span>
                 Reportes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ active('#') }}" href="#">
                 <span data-feather="employed"></span>
                 Empleados
                 </a>
