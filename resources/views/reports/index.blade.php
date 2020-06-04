@@ -5,7 +5,7 @@
     </div>
 
     <div class="pt-4 pb-4">
-        <h4>Rerportes por semana, mes, año.</h4>
+        <h4>Reportes por semana, mes, año.</h4>
     </div>  
 
 @include('footer')
