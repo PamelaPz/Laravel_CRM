@@ -4,19 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeProductsTable extends Migration
+class CreateEmployesTable extends Migration
 {
     public function up()
     {
-        Schema::create('type_products', function (Blueprint $table) {
+        Schema::create('employes', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->string('name');
+            $table->string('lastname');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('type_products');
+        Schema::dropIfExists('employes');
     }
 }
