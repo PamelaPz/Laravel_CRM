@@ -8,7 +8,7 @@
         <h4>Listado de clientes registrados</h4>
     </div>
     
-    <table class="table table-hover">
+    <table class="table table-hover mb-5">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -24,7 +24,7 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->lastname }}</td>
-                <td><a href="{{ url('/usuarios/'.$user->id) }}">Ver detalles</a></td>
+                <td><a href="{{ url('clientes/'.$user->id) }}">Ver detalles</a></td>
             </tr>
             @empty
             <tr>

@@ -26,15 +26,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ active('reports') }}" href="{{ route('reports') }}">
-                <span data-feather="report"></span>
-                Reportes
+                <a class="nav-link {{ active('#') }}" href="{{ route('employe') }}">
+                <span data-feather="employed"></span>
+                Empleados
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ active('#') }}" href="#">
-                <span data-feather="employed"></span>
-                Empleados
+                <a class="nav-link {{ active('reports') }}" href="{{ route('reports') }}">
+                <span data-feather="report"></span>
+                Reportes
                 </a>
             </li>
         </ul>
