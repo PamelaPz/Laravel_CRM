@@ -12,6 +12,9 @@ class CreateEmployesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
+            $table->string('email',100)->unique();
+            $table->string('password');
+            $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
     }
