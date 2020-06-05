@@ -11,7 +11,7 @@
         <div class="pt-4 pb-3">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Crear</a>
+                  <a class="nav-link active" href="{{ url('/create') }}">Crear</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Leer</a>
