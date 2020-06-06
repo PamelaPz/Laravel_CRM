@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('dashboard');
 })->name('home');
 
+Route::get('/dashboard/create', function () {
+    return view('dashboard.create');
+})->name('create');
+
 Route::get('clientes', 'UserController@index')
     ->name('customers');
 
