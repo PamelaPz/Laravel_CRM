@@ -1,8 +1,8 @@
 @extends('dashboard.dashboard')
 
-    @section('crear')
+    @section('leer')
         <div class="pb-5">
-            <h1 class="pt-3 pb-4 px-4">Crear</h1>
+            <h1 class="pt-3 pb-4 px-4">Leer</h1>
 
             <div class="px-4 col-6">
                 <form>

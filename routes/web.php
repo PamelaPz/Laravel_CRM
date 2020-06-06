@@ -2,32 +2,52 @@
 
 use Illuminate\Support\Facades\Route;
 
+/* Ruta inicial */
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard.dashboard');
 })->name('home');
 
-Route::get('/dashboard/create', function () {
+/* --- Acciones del CRUD */
+Route::get('/create', function () {
     return view('dashboard.create');
 })->name('create');
 
+Route::get('/read', function () {
+    return view('dashboard.read');
+})->name('read');
+
+Route::get('/update', function () {
+    return view('dashboard.update');
+})->name('update');
+
+Route::get('/delete', function () {
+    return view('dashboard.delete');
+})->name('delete');
+
+/* Ruta de clientes */
 Route::get('clientes', 'UserController@index')
     ->name('customers');
 
 Route::get('clientes/{id}', 'UserController@show')
-    ->where(['id' => '[0-9]+']);
+    ->where(['id' => '[0-9]+'])
+    ->name('customer.info');
 
+/* Ruta de productos */
 Route::get('productos', 'ProductsController@index')
     ->name('products');
 
+/* Ruta de pedidos */
 Route::get('pedidos', 'OrdersController@index')
     ->name('orders');
 
 Route::get('pedidos/{id}', 'OrdersController@show')
     ->where(['id' => '[0-9]+']);
 
+/* Ruta de reportes */
 Route::get('reportes', 'ReportsController@index')
     ->name('reports');
 
+/* Ruta de empleados */
 Route::get('employe', 'EmployesController@index')
     ->name('employe');
 
