@@ -36,6 +36,18 @@ Route::get('clientes/{id}', 'UserController@show')
 Route::get('productos', 'ProductsController@index')
     ->name('products');
 
+Route::get('productos/crear', 'ProductsController@create')
+    ->name('products.create');
+
+Route::post('productos/guardar', 'ProductsController@store')
+    ->name('products.store');
+
+Route::get('productos/editar/{id}', 'ProductsController@edit')
+    ->name('products.edit');
+
+Route::post('productos/actualizar', 'ProductsController@update')
+    ->name('products.update');
+
 /* Ruta de pedidos */
 Route::get('pedidos', 'OrdersController@index')
     ->name('orders');

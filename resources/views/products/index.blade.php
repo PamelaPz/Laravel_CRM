@@ -22,7 +22,7 @@
             <tr>
                 <th scope="row">{{ $product->id }}</th>
                 <td>{{ $product->name }}</td>
-                <td>{{ $product->price }}</td>
+                <td>$ {{ $product->price }}</td>
                 @foreach ($types as $type)
                     @if ($product->type_products_id == $type->id)
                       <td>{{ $type->type }}</td>
