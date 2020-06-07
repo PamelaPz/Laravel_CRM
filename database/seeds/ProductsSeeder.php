@@ -17,49 +17,49 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'name' => 'Pozole rojo',
-            'price' => '$150',
+            'price' => 150,
             'type_products_id' => $type_product_pozole,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Pozole verde',
-            'price' => '$140',
+            'price' => 140,
             'type_products_id' => $type_product_pozole,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Taco de bisteck',
-            'price' => '$15',
+            'price' => 15,
             'type_products_id' => $type_product_tacos,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Taco de suadero',
-            'price' => '$15',
+            'price' => 16,
             'type_products_id' => $type_product_tacos,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Taco de chorizo',
-            'price' => '$15',
+            'price' => 15,
             'type_products_id' => $type_product_tacos,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Pay de Limón',
-            'price' => '$30',
+            'price' => 30,
             'type_products_id' => $type_product_postre,
             'status_product_id' => $status_car
         ]);
 
         Product::create([
             'name' => 'Coca Cola Zero',
-            'price' => '$18',
+            'price' => 18,
             'type_products_id' => $type_product_bebida,
             'status_product_id' => $status_car
         ]);
