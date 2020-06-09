@@ -18,11 +18,6 @@ class Product extends Model
         return $this->belongsTo(TypeProduct::class);
     }
 
-    public function status_product()
-    {
-        return $this->belongsTo(StatusCar::class);
-    }
-
     public function shoppingCarts()
     {
         return $this->belongsToMany(ShoppingCart::class);
