@@ -23,10 +23,10 @@ class ProductsController extends Controller
     public function create()
     {
         $types = TypeProduct::all();
-        $statuses = StatusCar::all();
+        // $statuses = StatusCar::all();
 
 
-        return view('products.create', compact('types', 'statuses'));
+        return view('dashboard.create', compact('types'));
     }
 
     public function store(Request $request)
