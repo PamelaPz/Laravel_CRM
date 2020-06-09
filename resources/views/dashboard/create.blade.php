@@ -18,7 +18,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text" id="basic-addon1">$</span>
                             </div>
-                            <input type="number" name="price" id="price" class="form-control" placeholder="50.00" aria-label="Username" aria-describedby="basic-addon1" min="0">
+                            <input type="number" name="price" id="price" class="form-control" placeholder="50" aria-label="Username" aria-describedby="basic-addon1" min="0">
                         </div>
                     </div>
                     <div class="form-group">

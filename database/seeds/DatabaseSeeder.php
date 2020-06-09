@@ -9,7 +9,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->truncateTables([
             'users',
-            'status_cars',
             'type_products',
             'products',
             'cars',
@@ -19,7 +18,6 @@ class DatabaseSeeder extends Seeder
 
         // Ejecuta los seeders:
         $this->call(UserSeeder::class);
-        $this->call(StatusCarSeeder::class);
         $this->call(TypeProductsSeeder::class);
         $this->call(ProductsSeeder::class);
         $this->call(EmployesSeeder::class);
