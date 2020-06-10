@@ -19,6 +19,7 @@
         "watson/active": "^5.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.7",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "laracasts/generators": "^1.1",

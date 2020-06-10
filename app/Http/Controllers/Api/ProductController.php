@@ -7,13 +7,13 @@ use App\Product;
 
 class ProductController extends Controller
 {
-    public function lists()
-    {
-        return Product::all();
-    }
+	public function lists()
+	{
+		return Product::all();
+	}
 
-    public function read($id)
-    {
-        return Product::with(['type_products', 'status_product'])->findOrFail($id);
-    }
+	public function read($id)
+	{
+		return Product::with(['type_products', 'status_product'])->findOrFail($id);
+	}
 }
