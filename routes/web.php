@@ -8,9 +8,8 @@ Route::get('/', function () {
 })->name('home');
 
 /* --- Acciones del CRUD */
-Route::get('/create', function () {
-    return view('dashboard.create');
-})->name('create');
+Route::get('/create', 'ProductsController@create')
+    ->name('create');
 
 Route::get('/read', function () {
     return view('dashboard.read');
@@ -36,8 +35,8 @@ Route::get('clientes/{id}', 'UserController@show')
 Route::get('productos', 'ProductsController@index')
     ->name('products');
 
-Route::get('productos/crear', 'ProductsController@create')
-    ->name('products.create');
+// Route::get('productos/crear', 'ProductsController@create')
+//     ->name('products.create');
 
 Route::post('productos/guardar', 'ProductsController@store')
     ->name('products.store');

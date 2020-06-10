@@ -9,7 +9,7 @@
       <div class="pt-4 pb-3">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link {{ active('create') }}" href="{{ route('create') }}">Crear</a>
+            <a class="nav-link {{ active('create') }}" href="{{ route('create') }}">Crear Producto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ active('read') }}" href="{{ route('read') }}">Leer</a>

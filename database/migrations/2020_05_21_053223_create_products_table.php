@@ -13,13 +13,13 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->float('price');
             $table->unsignedBigInteger('type_products_id');
-            $table->unsignedBigInteger('status_product_id')->default(false);
+            // $table->unsignedBigInteger('status_product_id')->default(false);
             $table->timestamps();
 
             // Clave Foránea para tipo de producto
             $table->foreign('type_products_id')->references('id')->on('type_products');
             // Clave Foránea para cambiar el estatus del producto
-            $table->foreign('status_product_id')->references('id')->on('status_cars');
+            // $table->foreign('status_product_id')->references('id')->on('status_cars');
         });
     }
 
