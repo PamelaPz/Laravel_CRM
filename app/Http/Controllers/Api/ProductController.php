@@ -14,6 +14,6 @@ class ProductController extends Controller
 
     public function read($id)
     {
-        return Product::with(['type_products', 'status_product'])->findOrFail($id);
+        return Product::with('type_products')->findOrFail($id);
     }
 }
