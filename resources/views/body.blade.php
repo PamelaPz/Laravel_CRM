@@ -1,7 +1,7 @@
 @include('header')
 
-    @yield('home')
     @yield('customers')
     @yield('customer.info')
+    @yield('products')
 
 @include('footer')
