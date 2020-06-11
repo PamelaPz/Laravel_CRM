@@ -24,7 +24,7 @@ class ProductsController extends Controller
     {
         $types = TypeProduct::all();
 
-        return view('dashboard.create', compact('types'));
+        return view('products.create', compact('types'));
     }
 
     public function store(Request $request)
@@ -32,6 +32,7 @@ class ProductsController extends Controller
         Product::create([
             'name' => $request->get('name'),
             'price' => $request->get('price'),
+            'description' => $request->get('description'),
             'type_products_id' => $request->get('type_products_id')
         ]);
 
@@ -43,7 +44,7 @@ class ProductsController extends Controller
         $types = TypeProduct::all();
         $product = Product::findOrFail($id);
 
-        return view('products.edit', compact('product', 'types'));
+        return view('products.editar', compact('product', 'types'));
     }
 
     public function update(Request $request)
@@ -52,9 +53,18 @@ class ProductsController extends Controller
 
         $product->name = $request->get('name');
         $product->price = $request->get('price');
+        $product->description = $request->get('description');
         $product->type_products_id = $request->get('type_products_id');
 
         $product->save();
+
+        return redirect()->route('products');
+    }
+
+    public function delete($id) {
+
+        $product = Product::find($id);
+        $product->delete();
 
         return redirect()->route('products');
     }
