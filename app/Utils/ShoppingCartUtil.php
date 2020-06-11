@@ -9,6 +9,9 @@ use Illuminate\Support\Collection;
 
 class ShoppingCartUtil
 {
+	/**
+	 * @var User
+	 */
 	private $user;
 
 	/**
@@ -18,6 +21,12 @@ class ShoppingCartUtil
 	public function __construct(User $user)
 	{
 		$this->user = $user;
+
+		if ($user->shoppingCart == null) {
+			ShoppingCart::create([
+				'user_id' => $user->id
+			]);
+		}
 	}
 
 	public function getCart()
@@ -27,7 +36,7 @@ class ShoppingCartUtil
 
 	public function getCartProducts(): Collection
 	{
-		$shoppingCart = $this->getCart();
+		$shoppingCart = $this->getCart()->firstOrFail();
 
 		return $shoppingCart->products;
 	}
@@ -37,7 +46,7 @@ class ShoppingCartUtil
 		$products = $this->user->shoppingCart->products;
 
 		if ($products->contains(Product::find($product_id))) {
-			return $this->user->shoppingCart->products()->sync([$product_id => ['quantity' => $qty]]);
+			return $this->user->shoppingCart->products()->updateExistingPivot($product_id, ['quantity' => $qty]);
 		}
 
 		return $this->user->shoppingCart->products()->attach($product_id, ['quantity' => $qty]);
