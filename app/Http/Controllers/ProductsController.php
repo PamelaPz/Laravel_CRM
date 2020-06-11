@@ -10,52 +10,56 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-    public function index()
-    {
-        $products = Product::all();
-        $types = DB::table('type_products')->get();        
+	public function index()
+	{
+		$products = Product::all();
+		$types = DB::table('type_products')->get();
 
-        $title = 'Productos';
-        
-        return view('products.index', compact('title', 'products', 'types'));
-    }
+		$title = 'Productos';
 
-    public function create()
-    {
-        $types = TypeProduct::all();
+		return view('products.index', compact('title', 'products', 'types'));
+	}
 
-        return view('dashboard.create', compact('types'));
-    }
+	public function create()
+	{
+		$types = TypeProduct::all();
 
-    public function store(Request $request)
-    {
-        Product::create([
-            'name' => $request->get('name'),
-            'price' => $request->get('price'),
-            'type_products_id' => $request->get('type_products_id')
-        ]);
+		return view('dashboard.create', compact('types'));
+	}
 
-        return redirect()->route('products');
-    }
+	public function store(Request $request)
+	{
+		$product = Product::create([
+			'name' => $request->get('name'),
+			'price' => $request->get('price'),
+			'type_products_id' => $request->get('type_products_id')
+		]);
 
-    public function edit($id)
-    {
-        $types = TypeProduct::all();
-        $product = Product::findOrFail($id);
+		if ($request->hasFile('product')) {
+			$path = $request->file('product')->store('products');
+		}
 
-        return view('products.edit', compact('product', 'types'));
-    }
+		return redirect()->route('products');
+	}
 
-    public function update(Request $request)
-    {
-        $product = Product::findOrFail($request->get('id'));
+	public function edit($id)
+	{
+		$types = TypeProduct::all();
+		$product = Product::findOrFail($id);
 
-        $product->name = $request->get('name');
-        $product->price = $request->get('price');
-        $product->type_products_id = $request->get('type_products_id');
+		return view('products.edit', compact('product', 'types'));
+	}
 
-        $product->save();
+	public function update(Request $request)
+	{
+		$product = Product::findOrFail($request->get('id'));
 
-        return redirect()->route('products');
-    }
+		$product->name = $request->get('name');
+		$product->price = $request->get('price');
+		$product->type_products_id = $request->get('type_products_id');
+
+		$product->save();
+
+		return redirect()->route('products');
+	}
 }
