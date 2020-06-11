@@ -1,6 +1,7 @@
 @extends('products.options')
 
     @section('editar')
+        <a class="nav-link" href="{{ url()->previous() }}">Regresar</a>
         <div class="pb-5">
             <h1 class="pt-3 pb-4 px-4">Actualizar</h1>
 
