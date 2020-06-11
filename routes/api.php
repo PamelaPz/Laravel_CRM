@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +14,22 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('api')->group(function () {
-    Route::get('products', 'Api\ProductController@lists');
-    Route::get('products/{id}', 'Api\ProductController@read');
+	Route::get('products', 'Api\ProductController@lists');
+	Route::get('products/{id}', 'Api\ProductController@read');
 });
 
 Route::prefix('auth')->group(function () {
-    Route::post('login', 'Api\AuthController@login');
-    Route::post('signup', 'Api\AuthController@signup');
+	Route::post('login', 'Api\AuthController@login');
+	Route::post('signup', 'Api\AuthController@signup');
 
-    Route::middleware('auth:api')->group(function () {
-        Route::get('user', 'Api\AuthController@user');
-        Route::get('logout', 'Api\AuthController@logout');
-    });
+	Route::middleware('auth:api')->group(function () {
+		Route::get('user', 'Api\AuthController@user');
+		Route::get('logout', 'Api\AuthController@logout');
+
+		Route::prefix('cart')->group(function () {
+			Route::post('add-product', 'Api\ShoppingCartController@addProduct');
+			Route::post('list-products', 'Api\ShoppingCartController@products');
+			Route::post('delete-product', 'Api\ShoppingCartController@deleteProduct');
+		});
+	});
 });
-
