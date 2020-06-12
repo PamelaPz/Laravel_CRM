@@ -13,7 +13,7 @@
 					<div class="form-group">
 						<label for="name">Nombre del producto</label>
 						<input type="text" name="name" id="name" class="form-control" placeholder="Nombre producto">
-						<small id="emailHelp" class="form-text text-muted">Si su producto es: Pizza, HotDog, Tacos o Pozole solo escriba el calificativo o ingredientes.</small>
+						{{-- <small id="emailHelp" class="form-text text-muted">Si su producto es: Pizza, HotDog, Tacos o Pozole solo escriba el calificativo o ingredientes.</small> --}}
 					</div>
 					<div class="form-group">
 						<label for="price">Precio</label>
