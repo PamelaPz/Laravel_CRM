@@ -10,7 +10,7 @@ class ReportsController extends Controller
 {
     public function index()
     {
-        $title = 'Productos';
+        $title = 'Reportes';
 
         $orders = Buy::select([
             DB::raw('count(id) as quantity'),
