@@ -6,7 +6,7 @@
             <h1 class="pt-3 pb-4 px-4">Actualizar</h1>
 
             <div class="px-4 col">
-                <form action="{{ route('products.update', ['id' => $product->id]) }}" method="POST">
+                <form action="{{ route('products.update', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col">
@@ -47,10 +47,11 @@
                             </div>
                         </div>
                         <div class="col">
+                            <img src="{{ asset( 'storage/'.$product->image ) }}" alt="img-food" class="img-thumbnail" style="width: 70%">
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Example file input</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                              </div>
+                                <label for="product_image">Image del producto</label>
+                                <input type="file" name="product_image" class="form-control-file" id="product_image" value="hola.png">
+                            </div>
                         </div>
                     </div>
                     <div class="col-3 pt-4">
