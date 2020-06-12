@@ -26,6 +26,8 @@ class ShoppingCartUtil
 			ShoppingCart::create([
 				'user_id' => $user->id
 			]);
+
+			$this->user = User::whereId($user->id)->first();
 		}
 	}
 
