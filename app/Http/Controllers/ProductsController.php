@@ -45,7 +45,6 @@ class ProductsController extends Controller
 
 		if ($request->hasFile('product_image')) {
 			$file = $request->file('product_image');
-
 			$path = $file->storePublicly('public');
 
 			$product->image = $file->hashName();
@@ -72,6 +71,14 @@ class ProductsController extends Controller
 		$product->price = $request->get('price');
 		$product->description = $request->get('description');
 		$product->type_products_id = $request->get('type_products_id');
+
+		if ($request->hasFile('product_image')) {
+			$file = $request->file('product_image');
+
+			$path = $file->storePublicly('public');
+
+			$product->image = $file->hashName();
+		}
 
 		$product->save();
 
