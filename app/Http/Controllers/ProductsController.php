@@ -6,6 +6,7 @@ use App\Product;
 use App\TypeProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -23,7 +24,7 @@ class ProductsController extends Controller
 	{
 		$types = TypeProduct::all();
 
-		return view('dashboard.create', compact('types'));
+		return view('products.create', compact('types'));
 	}
 
 	public function store(Request $request)
@@ -31,18 +32,19 @@ class ProductsController extends Controller
 		$request->validate([
 			'name' => 'required|string',
 			'price' => 'required|numeric',
-			'type_products_is' => 'required|numeric',
+			'description' => 'required|string',
+			'type_products_id' => 'required|numeric',
 		]);
 
 		$product = new Product();
 
 		$product->name = $request->get('name');
 		$product->price = $request->get('price');
+		$product->description = $request->get('description');
 		$product->type_products_id = $request->get('type_products_id');
 
-
-		if ($request->hasFile('product')) {
-			$path = $request->file('product')->store('products');
+		if ($request->hasFile('product_image')) {
+			$path = $request->file('product_image')->store('products');
 
 			$product->image = $path;
 		}
@@ -57,7 +59,7 @@ class ProductsController extends Controller
 		$types = TypeProduct::all();
 		$product = Product::findOrFail($id);
 
-		return view('products.edit', compact('product', 'types'));
+		return view('products.editar', compact('product', 'types'));
 	}
 
 	public function update(Request $request)
@@ -66,6 +68,7 @@ class ProductsController extends Controller
 
 		$product->name = $request->get('name');
 		$product->price = $request->get('price');
+		$product->description = $request->get('description');
 		$product->type_products_id = $request->get('type_products_id');
 
 		$product->save();

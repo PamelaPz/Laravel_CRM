@@ -1,12 +1,12 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ active('home') }}" href="{{ route('home') }}">
                     <span data-feather="home"></span>
                     CRUD
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link {{ active('customers') }}" href="{{ route('customers') }}">
                     <span data-feather="customers"></span>
