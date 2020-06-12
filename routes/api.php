@@ -37,3 +37,7 @@ Route::prefix('auth')->group(function () {
 		});
 	});
 });
+
+Route::middleware('api')->group(function () {
+	Route::get('statistics', 'Api\StatisticController@statistics');
+});
