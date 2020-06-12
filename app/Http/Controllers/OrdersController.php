@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Buy;
-use App\Car;
+use App\Order;
 use App\User;
 use App\Product;
 use Illuminate\Http\Request;
@@ -15,25 +14,23 @@ class OrdersController extends Controller
     {
         $users = User::all();
         
-        $buys = Buy::all();
+        $buys = Order::all();
 
         $title = 'Pedidos';
         
-        return view('orders.index', compact('title', 'users','buys'));
+        return view('orders.index', compact('title','buys', 'users'));
     }
 
     public function show($id)
     {
         $users = User::all();
 
-        $buys = Buy::find($id);
-
-        $cars = Car::all();
+        $buys = Order::find($id);
 
         $products = Product::all();
 
         $title = 'Información de pedido';
 
-        return view('orders.show', compact('title', 'buys', 'users', 'cars', 'products'));
+        return view('orders.show', compact('title', 'buys', 'users'));
     }
 }

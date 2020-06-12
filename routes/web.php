@@ -37,8 +37,8 @@ Route::get('product/eliminar/{id}', 'ProductsController@delete') // Acción para
 Route::get('pedidos', 'OrdersController@index')
     ->name('orders');
 
-Route::get('pedidos/{id}', 'OrdersController@show')
-    ->where(['id' => '[0-9]+']);
+// Route::get('pedidos/{id}', 'OrdersController@show')
+//     ->where(['id' => '[0-9]+']);
 
 
 
