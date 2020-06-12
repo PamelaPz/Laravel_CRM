@@ -31,5 +31,9 @@ Route::prefix('auth')->group(function () {
 			Route::post('list-products', 'Api\ShoppingCartController@products');
 			Route::post('delete-product', 'Api\ShoppingCartController@deleteProduct');
 		});
+
+		Route::prefix('orders')->group(function () {
+			Route::post('create', 'Api\OrderController@create');
+		});
 	});
 });
