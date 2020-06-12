@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use App\StatusCar;
 use App\TypeProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,15 +28,26 @@ class ProductsController extends Controller
 
 	public function store(Request $request)
 	{
-		$product = Product::create([
-			'name' => $request->get('name'),
-			'price' => $request->get('price'),
-			'type_products_id' => $request->get('type_products_id')
+		$request->validate([
+			'name' => 'required|string',
+			'price' => 'required|numeric',
+			'type_products_is' => 'required|numeric',
 		]);
+
+		$product = new Product();
+
+		$product->name = $request->get('name');
+		$product->price = $request->get('price');
+		$product->type_products_id = $request->get('type_products_id');
+
 
 		if ($request->hasFile('product')) {
 			$path = $request->file('product')->store('products');
+
+			$product->image = $path;
 		}
+
+		$product->save();
 
 		return redirect()->route('products');
 	}

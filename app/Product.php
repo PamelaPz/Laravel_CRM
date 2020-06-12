@@ -31,27 +31,32 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereTypeProductsId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $description
+ * @property string|null $image
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Product whereImage($value)
  */
 class Product extends Model
 {
-    protected $fillable = [
-        'name',
-        'price',
-        'type_products_id',
-    ];
+	protected $fillable = [
+		'name',
+		'price',
+		'image',
+		'type_products_id',
+	];
 
-    public function type_products()
-    {
-        return $this->belongsTo(TypeProduct::class);
-    }
+	public function type_products()
+	{
+		return $this->belongsTo(TypeProduct::class);
+	}
 
-    public function shoppingCarts()
-    {
-        return $this->belongsToMany(ShoppingCart::class);
-    }
+	public function shoppingCarts()
+	{
+		return $this->belongsToMany(ShoppingCart::class);
+	}
 
-    public function orders()
-    {
-        return $this->belongsToMany(Order::class);
-    }
+	public function orders()
+	{
+		return $this->belongsToMany(Order::class);
+	}
 }
