@@ -30,5 +30,13 @@ class TypeProductsSeeder extends Seeder
         TypeProduct::create([
             'type' => 'Postre'
         ]);
+
+        TypeProduct::create([
+            'type' => 'Hamburguesa'
+        ]);
+
+        TypeProduct::create([
+            'type' => 'Pollo'
+        ]);
     }
 }

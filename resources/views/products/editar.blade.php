@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <img src="{{ asset( 'storage/'.$product->image ) }}" alt="img-food">
+                            <img src="{{ asset( 'storage/'.$product->image ) }}" alt="img-food" class="img-thumbnail" style="width: 70%">
                             <div class="form-group">
                                 <label for="product_image">Image del producto</label>
                                 <input type="file" name="product_image" class="form-control-file" id="product_image" value="hola.png">
