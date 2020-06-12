@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ active('reports') }}" href="{{ route('reports') }}">
+                <a class="nav-link {{ active('graficas') }}" href="{{ route('graficas') }}">
                     <span data-feather="report"></span>
                     Gráficas
                 </a>

@@ -43,12 +43,14 @@ Route::get('pedidos', 'OrdersController@index')
 
 
 /* Ruta de reportes */
+// Route::get('reportes/grafic', 'StatisticController@statistics')
+//     ->name('graficas');
+    
 Route::get('reportes', 'ReportsController@index')
-    ->name('reports');
+    ->name('graficas');
 
 
 
 /* Ruta de empleados */
 Route::get('employe', 'EmployesController@index')
     ->name('employe');
-

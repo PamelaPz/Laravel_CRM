@@ -84,4 +84,13 @@ class ProductsController extends Controller
 
 		return redirect()->route('products');
 	}
+
+	public function delete($id) 
+	{
+
+		$product = Product::destroy($id);
+
+		return redirect()->route('products');
+
+	}
 }
