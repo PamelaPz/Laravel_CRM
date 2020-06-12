@@ -42,7 +42,7 @@
     </div>
 
     <div class="row">
-        @foreach ($cars as $car)
+        @foreach ($users as $car)
             @if ($car->id == $buys->car_id)                        
                 <div class="col-sm-4">
                     <div class="card">

@@ -34,7 +34,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ active('reports') }}" href="{{ route('reports') }}">
                     <span data-feather="report"></span>
-                    Reportes
+                    Gráficas
                 </a>
             </li>
         </ul>

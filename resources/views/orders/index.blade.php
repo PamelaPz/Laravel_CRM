@@ -13,8 +13,7 @@
             <th scope="col">#</th>
             {{-- <th scope="col">Número de Pedidos</th> --}}
             <th colspan="2">Usuario</th>
-            <th scope="col">Fecha del pedido</th>
-            <th scope="col"></th>
+            {{-- <th scope="col"></th> --}}
           </tr>
         </thead>
         <tbody>
@@ -27,8 +26,7 @@
                       <td>{{ $user->lastname }}</td>
                     @endif
                 @endforeach 
-                <td>{{ $buy->date_buy }}</td>
-                <td><a href="{{ url('/pedidos/'.$buy->id) }}">Ver detalles</a></td>            
+                {{-- <td><a href="{{ url('/pedidos/'.$buy->id) }}">Ver detalles</a></td>             --}}
             </tr>
             @empty
             <tr>

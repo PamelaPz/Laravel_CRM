@@ -6,6 +6,10 @@
 
     <div class="pt-4 pb-4">
         <h4>Reportes por semana, mes, año.</h4>
+
+        <div class="col-6 py-1">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
     </div>  
 
 @include('footer')
