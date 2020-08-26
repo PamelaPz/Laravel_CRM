@@ -12,7 +12,6 @@ Route::get('clientes/{id}', 'UserController@show')
     ->name('customer.info');
 
 
-
 /* Ruta de productos */
 Route::get('productos', 'ProductsController@index')
     ->name('products');
